@@ -10,9 +10,6 @@ const Shimmer = () => {
         <p style={{ margin: '20px 0' } } >
           <Skeleton height={50} />
         </p>
-        <p style={{ margin: '20px 0' }}>
-          <Skeleton height={50} />
-        </p>
       </div>
   </SkeletonTheme>
   )
