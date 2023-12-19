@@ -30,8 +30,19 @@ const CreateTask = ({ tasks, setTasks,alltasks }) => {
     if (data.status === 200) {
       toast.success("Task created successfully");
       alltasks();
+      setTask({
+          id: "",
+          name: "",
+          status: "todo",
+        });
+
     } else {
       toast.error(res.error);
+      setTask({
+        id: "",
+        name: "",
+        status: "todo",
+      });
     }
     // setTasks((prev) => {
     //   const list = [...(prev || []), task];

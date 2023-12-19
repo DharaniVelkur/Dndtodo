@@ -9,7 +9,7 @@ import notecontext from "./context/NoteContext";
 
 function Body() {
   const [tasks,setTasks] =useState([]);
-  let {loading,setLoading} =useContext(notecontext)
+  let {setLoading} =useContext(notecontext);
   let token=localStorage.getItem('dndtoken');
   let navigate =useNavigate();
   const alltasks= async () =>{
@@ -34,8 +34,10 @@ function Body() {
   }
   // console.log(tasks);
 
+
   const validuser = async () => {
     let token = localStorage.getItem("dndtoken");
+    
     const res = await fetch("http://localhost:8000/validuser", {
       method: "GET",
       headers: {
@@ -55,6 +57,7 @@ function Body() {
   useEffect(() => {
     validuser();
   }, []);
+    let user = JSON.parse(localStorage.getItem("dnduser"));
 
   const handleLogout =async () =>{
     const data =await fetch('http://localhost:8000/logout',{
@@ -86,7 +89,8 @@ function Body() {
     <DndProvider backend={HTML5Backend}>
     <Toaster/>
     <button className="absolute top-4 right-4 font-bold" onClick={handleLogout}>Sign Out <i className="fa-solid fa-arrow-right-from-bracket"></i></button>
-    <div className="bg-slate-100 w-full h-screen flex flex-col pt-32 gap-16 items-center">
+    <h1 className="absolute top-4 left-4 font-bold text-3xl">Welcome {user.name.toUpperCase()}!!</h1>
+    <div className=" flex flex-col pt-32 gap-16 items-center">
       <CreateTask tasks={tasks} setTasks={setTasks} alltasks={alltasks}/>
       <ListTasks tasks={tasks} setTasks={setTasks} alltasks={alltasks}/>
     </div>
