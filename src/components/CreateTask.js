@@ -15,7 +15,7 @@ const CreateTask = ({ tasks, setTasks,alltasks }) => {
       return toast.error("Please enter a task name more than 3 characters");
     let token = localStorage.getItem("dndtoken");
   
-    const data = await fetch(`http://localhost:8000/addtask`, {
+    const data = await fetch(`https://dndtodo-backend.onrender.com/addtask`, {
       method: "POST",
       headers: {
         "Access-Control-Allow-Origin": true,

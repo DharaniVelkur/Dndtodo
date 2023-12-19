@@ -14,7 +14,7 @@ function Body() {
   let navigate =useNavigate();
   const alltasks= async () =>{
     setLoading(true);
-    const data =await fetch('http://localhost:8000/tasks',{
+    const data =await fetch('https://dndtodo-backend.onrender.com/tasks',{
       method:"GET",
       headers:{
         'Access-Control-Allow-Origin':true,
@@ -38,7 +38,7 @@ function Body() {
   const validuser = async () => {
     let token = localStorage.getItem("dndtoken");
     
-    const res = await fetch("http://localhost:8000/validuser", {
+    const res = await fetch("https://dndtodo-backend.onrender.com/validuser", {
       method: "GET",
       headers: {
         "Access-Control-Allow-Origin": true,
@@ -60,7 +60,7 @@ function Body() {
     let user = JSON.parse(localStorage.getItem("dnduser"));
 
   const handleLogout =async () =>{
-    const data =await fetch('http://localhost:8000/logout',{
+    const data =await fetch('https://dndtodo-backend.onrender.com/logout',{
       method:"GET",
       headers:{
         'Access-Control-Allow-Origin':true,

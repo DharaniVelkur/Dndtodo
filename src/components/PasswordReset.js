@@ -13,7 +13,7 @@ const PasswordReset = () => {
     setSpin(true);
     e.preventDefault();
     const res = await fetch(
-      "http://localhost:8000/sendpasswordlink",
+      "https://dndtodo-backend.onrender.com/sendpasswordlink",
       {
         method: "POST",
         headers: {

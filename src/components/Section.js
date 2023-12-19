@@ -41,7 +41,7 @@ const Section = ({ status, tasks, setTasks, todos, inprogress, closed, alltasks 
   // const updatedTask = await tasksToMap?.filter(t=>(t?.id===id?{...t,status:currentStatus}:t))[0];
     // console.log("updatedTask",updatedTask);
   let token= localStorage.getItem('dndtoken');
-  const data =await fetch(`http://localhost:8000/edittask/${id}`,{
+  const data =await fetch(`https://dndtodo-backend.onrender.com/edittask/${id}`,{
     method:"PUT",
     headers:{
       "Access-Control-Allow-Origin":true,

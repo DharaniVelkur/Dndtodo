@@ -13,7 +13,7 @@ const IndividualTask = ({ task, tasks, setTasks,alltasks }) => {
 
   const handleRemove =async (id) => {
     let token = localStorage.getItem('dndtoken');
-    const data =await fetch(`http://localhost:8000/deletetask/${id}`,{
+    const data =await fetch(`https://dndtodo-backend.onrender.com/deletetask/${id}`,{
       method: 'DELETE',
       headers:{
         "Access-Control-Allow-Origin":true,
@@ -50,7 +50,7 @@ const handleEdit =async (id) =>{
   const updatedTask = { ...tasks[taskIndex], name: editedTaskName };
   // const updatedTask =await tasks?.filter(t=>(t.id===id?{...t,name: editedTaskName}:t))[0];
   // console.log(updatedTask)
-  const data =await fetch(`http://localhost:8000/updatetask/${id}`,{
+  const data =await fetch(`https://dndtodo-backend.onrender.com/updatetask/${id}`,{
     method:"PUT",
     headers:{
       "Access-Control-Allow-Origin":true,

@@ -13,7 +13,7 @@ const ForgotPassword = () => {
 
   const uservalid = async () => {
     const response = await fetch(
-      `http://localhost:8000/forgotpassword/${id}/${token}`,
+      `https://dndtodo-backend.onrender.com/forgotpassword/${id}/${token}`,
       {
         method: "GET",
         headers: {
@@ -38,7 +38,7 @@ const ForgotPassword = () => {
       toast.error("Password is required!!");
     } else {
       const res = await fetch(
-        `http://localhost:8000/${id}/${token}`,
+        `https://dndtodo-backend.onrender.com/${id}/${token}`,
         {
           method: "POST",
           headers: {

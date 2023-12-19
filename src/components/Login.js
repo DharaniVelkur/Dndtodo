@@ -15,7 +15,7 @@ const Login = () => {
   const loginUser = async (e) => {
     e.preventDefault();
     setSpin(true);
-    const data = await fetch("http://localhost:8000/login", {
+    const data = await fetch("https://dndtodo-backend.onrender.com/login", {
       method: "POST",
       headers: {
         "Access-Control-Allow-Origin": true,
@@ -49,7 +49,7 @@ const Login = () => {
 
   const validuser = async () => {
     let token = localStorage.getItem("dndtoken");
-    const res = await fetch("http://localhost:8000/validuser", {
+    const res = await fetch("https://dndtodo-backend.onrender.com/validuser", {
       method: "GET",
       headers: {
         "Access-Control-Allow-Origin": true,
